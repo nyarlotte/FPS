@@ -65,7 +65,9 @@
      <Compile Include="Assets\Package\UnityChan\Scripts\ThirdPersonCamera.cs" />
      <Compile Include="Assets\Package\UnityChan\Scripts\UnityChanControlScriptWithRgidBody.cs" />
      <Compile Include="Assets\Package\UnityChan\SplashScreen\Scripts\SplashScreen.cs" />
-     <Compile Include="Assets\Script\NewBehaviourScript.cs" />
+     <Compile Include="Assets\Script\Map.cs" />
+     <Compile Include="Assets\Script\Practice.cs" />
+     <Compile Include="Assets\Script\StartScript.cs" />
      <None Include="Assets\Package\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_eye.shader" />
      <None Include="Assets\Package\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_fuku.shader" />
      <None Include="Assets\Package\UnityChan\Voice\unity-chan_voice_list.txt" />
