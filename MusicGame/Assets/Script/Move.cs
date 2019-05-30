@@ -13,7 +13,7 @@ public class Move : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-      Vector3 p = new Vector3(0,0,1);
+      Vector3 p = new Vector3(0,0,-0.1f);
       transform.Translate(p);
     }
 }

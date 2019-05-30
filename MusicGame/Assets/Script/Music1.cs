@@ -16,6 +16,6 @@ public class Music1 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-      new Vector3(0,0,1);
+
     }
 }
