@@ -53,6 +53,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Script\DestroyNotes.cs" />
+     <Compile Include="Assets\Script\Line_A.cs" />
+     <Compile Include="Assets\Script\Line_D.cs" />
+     <Compile Include="Assets\Script\Line_F.cs" />
+     <Compile Include="Assets\Script\Line_G.cs" />
+     <Compile Include="Assets\Script\Line_S.cs" />
+     <Compile Include="Assets\Script\Move.cs" />
      <Compile Include="Assets\Script\MusicPlayer.cs" />
      <Compile Include="Assets\Script\Notes.cs" />
  <Reference Include="Unity.TextMeshPro.Editor">

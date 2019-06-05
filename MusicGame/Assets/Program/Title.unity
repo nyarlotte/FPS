@@ -482,6 +482,7 @@ GameObject:
   - component: {fileID: 534669904}
   - component: {fileID: 534669903}
   - component: {fileID: 534669906}
+  - component: {fileID: 534669907}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -570,6 +571,27 @@ MonoBehaviour:
   focusObj: {fileID: 0}
   showInstWindow: 0
   oldPos: {x: 0, y: 0, z: 0}
+--- !u!114 &534669907
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 534669902}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2ad33a91a0318149b13c31aa55e411d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Note: {fileID: 8638168355491135139, guid: 99bef2ff910892440a5167515f353bc5, type: 3}
+  speed: 1000
+  lane1Time: 0
+  lane2Time: 0
+  lane3Time: 0
+  lane4Time: 0
+  lane5Time: 0
+  randomMax: 11
+  randomMin: 0
 --- !u!1 &1002289705
 GameObject:
   m_ObjectHideFlags: 0
