@@ -53,15 +53,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Script\DestroyNotes.cs" />
-     <Compile Include="Assets\Script\Line_A.cs" />
-     <Compile Include="Assets\Script\Line_D.cs" />
-     <Compile Include="Assets\Script\Line_F.cs" />
-     <Compile Include="Assets\Script\Line_G.cs" />
-     <Compile Include="Assets\Script\Line_S.cs" />
-     <Compile Include="Assets\Script\Move.cs" />
+     <Compile Include="Assets\Script\Game\DestroyNotes.cs" />
+     <Compile Include="Assets\Script\Game\Line_A.cs" />
+     <Compile Include="Assets\Script\Game\Line_D.cs" />
+     <Compile Include="Assets\Script\Game\Line_F.cs" />
+     <Compile Include="Assets\Script\Game\Line_G.cs" />
+     <Compile Include="Assets\Script\Game\Line_S.cs" />
+     <Compile Include="Assets\Script\Game\Move.cs" />
      <Compile Include="Assets\Script\MusicPlayer.cs" />
-     <Compile Include="Assets\Script\Notes.cs" />
+     <Compile Include="Assets\Script\NoteCreate.cs" />
  <Reference Include="Unity.TextMeshPro.Editor">
  <HintPath>D:/Unity/Project/BigMaze/MusicGame/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
  </Reference>
