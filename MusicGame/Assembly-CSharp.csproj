@@ -62,6 +62,9 @@
      <Compile Include="Assets\Script\Game\Move.cs" />
      <Compile Include="Assets\Script\MusicPlayer.cs" />
      <Compile Include="Assets\Script\NoteCreate.cs" />
+     <Compile Include="Assets\Script\Select\Select.cs" />
+     <Compile Include="Assets\Script\Select\SelectMusic.cs" />
+     <Compile Include="Assets\Script\Select\test.cs" />
  <Reference Include="Unity.TextMeshPro.Editor">
  <HintPath>D:/Unity/Project/BigMaze/MusicGame/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
  </Reference>
