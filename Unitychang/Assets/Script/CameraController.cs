@@ -60,14 +60,14 @@ namespace UnityChan
 
 		void Update ()
 		{
-			this.mouseEvent();
+			//this.mouseEvent();
 
 			return;
 		}
 
 		//Show Instrustion Window
 
-		void mouseEvent()
+/*		void mouseEvent()
 		{
 			float delta = Input.GetAxis("Mouse ScrollWheel");
 			if (delta != 0.0f)
@@ -133,7 +133,7 @@ namespace UnityChan
 
 			return;
 		}
-
+*/
 		void cameraTranslate(Vector3 vec)
 		{
 			Transform focusTrans = this.focusObj.transform;

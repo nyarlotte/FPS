@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class status : MonoBehaviour{
 public GameObject player;
-int health = 100;
+public int health = 100;
 int power = 20;
 
     void Update(){
@@ -29,5 +29,8 @@ int power = 20;
           Debug.Log (health);
          }
 
+    }
+    void Item (){
+      // 配列で保管
     }
 }
