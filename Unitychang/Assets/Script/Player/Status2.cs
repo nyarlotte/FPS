@@ -10,6 +10,9 @@ public class Status2 : MonoBehaviour
 
     public  List<string> Bug = new List<string>();
 
+    void Awake () {
+	DontDestroyOnLoad(gameObject);
+}
     //public  int CurrentHP;
 
     public void Status(){//ステータス用関数
@@ -26,7 +29,7 @@ public class Status2 : MonoBehaviour
     }
 
     public void Item(){//アイテム用関数
-  
+
       if(Bug[0]=="リンゴ"){
           Debug.Log(Bug[0]);
       }

@@ -54,6 +54,8 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Script\Game\DestroyNotes.cs" />
+     <Compile Include="Assets\Script\Game\GUI\Menu.cs" />
+     <Compile Include="Assets\Script\Game\GUI\Return.cs" />
      <Compile Include="Assets\Script\Game\Line_A.cs" />
      <Compile Include="Assets\Script\Game\Line_D.cs" />
      <Compile Include="Assets\Script\Game\Line_F.cs" />
@@ -62,9 +64,7 @@
      <Compile Include="Assets\Script\Game\Move.cs" />
      <Compile Include="Assets\Script\MusicPlayer.cs" />
      <Compile Include="Assets\Script\NoteCreate.cs" />
-     <Compile Include="Assets\Script\Select\Select.cs" />
      <Compile Include="Assets\Script\Select\SelectMusic.cs" />
-     <Compile Include="Assets\Script\Select\test.cs" />
  <Reference Include="Unity.TextMeshPro.Editor">
  <HintPath>D:/Unity/Project/BigMaze/MusicGame/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
  </Reference>

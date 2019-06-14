@@ -62,12 +62,12 @@
      <Compile Include="Assets\Script\GUI\Return.cs" />
      <Compile Include="Assets\Script\GUI\StatusButton.cs" />
      <Compile Include="Assets\Script\Item\Apple.cs" />
-     <Compile Include="Assets\Script\Move.cs" />
      <Compile Include="Assets\Script\MoveScene.cs" />
+     <Compile Include="Assets\Script\MoveScene2.cs" />
+     <Compile Include="Assets\Script\Plactice\Move.cs" />
+     <Compile Include="Assets\Script\Plactice\Rotate.cs" />
      <Compile Include="Assets\Script\Player\Status2.cs" />
-     <Compile Include="Assets\Script\poison.cs" />
-     <Compile Include="Assets\Script\Rotate.cs" />
-     <Compile Include="Assets\Script\status.cs" />
+     <Compile Include="Assets\Script\Title\MoveGame.cs" />
      <Compile Include="Assets\Script\UnityChanControlScriptWithRgidBody.cs" />
      <Compile Include="Assets\UnityChan\Scripts\AutoBlink.cs" />
      <Compile Include="Assets\UnityChan\Scripts\FaceUpdate.cs" />

@@ -5,9 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class MoveScene : MonoBehaviour
 {
-  void OnTriggerEnter(Collider other)
+  void OnTriggerEnter(Collider unitychan)
   {
-      if (other.attachedRigidbody){
+      if (unitychan.gameObject.CompareTag("Player")){
           SceneManager.LoadScene ("NewScene");
         }
 }
