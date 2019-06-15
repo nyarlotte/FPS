@@ -4,18 +4,16 @@ using UnityEngine;
 
 public class HotSpring : MonoBehaviour
 {
-        GameObject Player;
-        Status2    script;
+        Status2 PlayerScript;
+
     void Start()
     {
-        Player = GameObject.Find("unitychan");
-        script = Player.GetComponent<Status2>();
+      PlayerScript = GameObject.Find("unitychan").GetComponent<Status2>();
     }
 
     void OnTriggerStay(Collider unitychan){
-
          if (unitychan.gameObject.CompareTag("Player")){
-                  script.HP++ ;
+                  PlayerScript.HP++ ;
             //Debug.Log (script.HP);
          }
     }

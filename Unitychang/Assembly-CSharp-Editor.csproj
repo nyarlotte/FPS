@@ -53,6 +53,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\query-chan-model\Editor\MyEditor.cs" />
      <Compile Include="Assets\UnityChan\Editor\CreateLocatorHere.cs" />
  <Reference Include="Unity.TextMeshPro.Editor">
  <HintPath>D:/Unity/Project/BigMaze/Unitychang/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>

@@ -4,20 +4,20 @@ using UnityEngine;
 
 public class PoisonSwamp : MonoBehaviour
 {
-        GameObject Player;
-        Status2    script;
+        Status2 PlayerScript;
+      //  Status2    script;
     void Start()
     {
-        Player = GameObject.Find("unitychan");
-        script = Player.GetComponent<Status2>();
+        PlayerScript = GameObject.Find("unitychan").GetComponent<Status2>();
+      //  script = Player;
     }
 
     void OnTriggerStay(Collider unitychan){
 
          if (unitychan.gameObject.CompareTag("Player")){
 
-            script.HP-- ;
-            Debug.Log (script.HP);
+            PlayerScript.HP-- ;
+            Debug.Log (PlayerScript.HP);
          }
     }
 }

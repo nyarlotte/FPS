@@ -5,17 +5,13 @@ using UnityEngine.UI;
 
 public class StatusButton : MonoBehaviour
 {
-　　GameObject Player;
-    Status2 script;
+　　        Status2 PlayerScript;
 
+    public GameObject Panel;
   public void Start(){
-    Player = GameObject.Find("unitychan");
-    script = Player.GetComponent<Status2>();
-
-
+    PlayerScript = GameObject.Find("unitychan").GetComponent<Status2>();
   }
   public void ClickStatus(){
-  
-        Debug.Log(script.HP);
+    Panel.SetActive(true);
   }
 }
