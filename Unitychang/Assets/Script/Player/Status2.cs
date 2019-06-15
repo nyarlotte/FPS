@@ -24,7 +24,6 @@ public class Status2 : MonoBehaviour
       if(HP > MaxHP){
          HP  = MaxHP;
       }
-      Debug.Log(HP);
     }
 
 

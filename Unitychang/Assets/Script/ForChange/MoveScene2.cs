@@ -16,17 +16,5 @@ public class MoveScene2 : MonoBehaviour
         }
 }
 
-void start(){
 
 }
-}
-
-/*[SerializeField] GameObject Player ;
-[SerializeField] Vector3 Spawn ;
-[SerializeField] Transform Point ;
-void awake(){
-   Player = GameObject.Find("unitychan").GetComponent<Transform>();
-   Point = Player.transform;
-   Spawn = Point.position;//5,0,5
-}
-*/

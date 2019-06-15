@@ -17,7 +17,6 @@ public class Move : MonoBehaviour
     {
       if (Input.GetKeyDown (KeyCode.D)) {
   			transform.Translate (0, 0, 1);
-
   		}
   		if (Input.GetKeyDown (KeyCode.A)) {
   			transform.Translate (0, 0, -1);
