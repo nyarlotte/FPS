@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Return : MonoBehaviour
 {
-    //GameObject Return;
+  //Menuで表示したものを元に戻すためのスクリプト
+  //一つにまとめてOnclickに設定しても関数が同時に2つは知ってしまっていたのでこういう形にしてみた
     public GameObject Status;
     public GameObject Item;
     public GameObject Save;

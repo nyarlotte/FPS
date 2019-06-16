@@ -8,6 +8,7 @@ public class Enemy : MonoBehaviour{
   private Rigidbody rb;
 	private Vector3 defaultPos;
 
+//踏んづけたら死ぬ　ただコライダーの判定が意味不明なので当たったら死ぬ
   void OnTriggerStay(Collider unitychan){
     if(unitychan.gameObject.CompareTag("Player")){
       Destroy(enemy);

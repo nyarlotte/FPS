@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/BattleFields.unity
+- path: Assets/UnityChan/SD_Kohaku_chanz/Scenes/Misaki_sum.unity
   isLoaded: 1
   isActive: 1

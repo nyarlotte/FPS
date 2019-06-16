@@ -3,9 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+
+
+
+
+//Unityちゃんに関する基本パラメータに関するスクリプト
 public class Status2 : MonoBehaviour
 {
-    public  int MaxHP = 150;
+    public  int MaxHP = 150;　//maxHP
     public  int AT;
     public  int HP = 100;
     public  Text UiHP;
@@ -13,7 +18,7 @@ public class Status2 : MonoBehaviour
     public  List<string> Bug = new List<string>();
 
     void Awake () {
-	DontDestroyOnLoad(gameObject);
+	DontDestroyOnLoad(gameObject);　//シーン移動でゆにてぃちゃんが変化しないように
   slider = GameObject.Find("Slider").GetComponent<Slider>();
   UiHP   = GameObject.Find("HPText").GetComponent<Text>();
 }
@@ -22,26 +27,28 @@ public class Status2 : MonoBehaviour
     public void Status(){//ステータス用関数
 
       if(HP > MaxHP){
+        //MaxHPを超えないように
          HP  = MaxHP;
       }
     }
 
 
     public void HPGuI(){
-
+      //スライダーのGUIを表示させるための
       slider.maxValue = MaxHP;
       UiHP.text = "HP"+ HP.ToString() + "/" + MaxHP.ToString();
       slider.value = HP;
 
     }
     void Update(){
+      //毎フレーム変化していくだろうモノをぶち込む
       Death();
       Status();
       HPGuI();
     }
 
     public void Item(){//アイテム用関数
-
+//アイテムを格納するための配列うまくいかなかったので後日改修
       if(Bug[0]=="リンゴ"){
           Debug.Log(Bug[0]);
       }

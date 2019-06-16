@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Menu : MonoBehaviour
 {
+  //Setactiveで非表示にしているのでFindで探すことができないためスクリプト自身にアタッチ
     //GameObject Menu;
     public GameObject Status;
     public GameObject Item;

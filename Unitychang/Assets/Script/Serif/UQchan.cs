@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class UQchan : MonoBehaviour
 {
+  //眠くなったので作り直し
 /*  public Text T;
   void Awake(){
     T　=　GameObject.Find("SelifText").GetComponent<Text>();

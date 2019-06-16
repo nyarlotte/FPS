@@ -10,7 +10,8 @@
 //Change : Add the operation for Mac
 //
 
-
+//ゆにちぃちゃんのアセットに入っていた物　GUIで表示されているものは削除した
+//あまり手を付けていない
 
 
 using UnityEngine;

@@ -12,7 +12,11 @@ namespace UnityChan
 	[RequireComponent(typeof(Animator))]
 	[RequireComponent(typeof(CapsuleCollider))]
 	[RequireComponent(typeof(Rigidbody))]
-
+//　
+//　アセットに入っていた物GUIを非表示させている
+//
+//
+//
 	public class UnityChanControlScriptWithRgidBody : MonoBehaviour
 	{
 

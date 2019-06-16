@@ -5,11 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class MoveScene2 : MonoBehaviour
 {
-
+//Move.cs参照
   void OnTriggerEnter(Collider unitychan)
   {
-
-
       if (unitychan.gameObject.CompareTag("Player")){
           SceneManager.LoadScene ("SampleScene");
           GameObject.Find("unitychan").transform.position = new Vector3 (15,0,-2.8f);
