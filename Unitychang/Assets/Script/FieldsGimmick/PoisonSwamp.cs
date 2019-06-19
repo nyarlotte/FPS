@@ -7,7 +7,7 @@ public class PoisonSwamp : MonoBehaviour
         Status2 PlayerScript;
     void Start()
     {
-        PlayerScript = GameObject.Find("unitychan").GetComponent<MisakichanStatus>();
+        PlayerScript = GameObject.Find("unitychan").GetComponent<Status2>();
 
     }
 

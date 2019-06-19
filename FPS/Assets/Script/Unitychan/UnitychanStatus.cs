@@ -5,11 +5,12 @@ using UnityEngine.UI;
 public class UnitychanStatus : MonoBehaviour
 {
     public  int MaxHP = 150;　//maxHP
-    public  int AT;
+    public  int AT  =　50;
+    public  int Speed  =　50;
     public  int HP = 100;
     public  Text UiHP;
     public  Slider slider;
-    public  List<string> Bug = new List<string>();
+
 
     void Awake () {
 	DontDestroyOnLoad(gameObject);　//シーン移動でゆにてぃちゃんが変化しないように
@@ -20,10 +21,7 @@ public class UnitychanStatus : MonoBehaviour
 
     public void Status(){//ステータス用関数
 
-      if(HP > MaxHP){
-        //MaxHPを超えないように
-         HP  = MaxHP;
-      }
+
     }
 
 
@@ -41,6 +39,7 @@ public class UnitychanStatus : MonoBehaviour
       HPGuI();
     }
 
+
     public void Death(){//ゲームオーバー用の関数
       if(HP <= 0 ){
         Destroy(gameObject);
@@ -50,3 +49,9 @@ public class UnitychanStatus : MonoBehaviour
 
 　
 }
+
+//-----HPを回復させるなら--------------------------------
+/*if(HP > MaxHP){
+  //MaxHPを超えないように
+   HP  = MaxHP;
+}*/
