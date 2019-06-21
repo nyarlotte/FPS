@@ -4,24 +4,12 @@ using UnityEngine;
 
 public class BallScript : MonoBehaviour
 {
-    Character Attck;
+    Character Attack;
 
-    public float Damege;
+    public float Damage;
     public GameObject Ball;
-    void awake(){
-      Attck = GameObject.Find("unitychan").GetComponent<Character>();
-
+    void Awake(){
+      Attack = GameObject.Find("unitychan").GetComponent<Character>();
+      Damage = Attack.AT;
     }
-
-    void OnTriggerEnter(Collider other){
-      if(gameObject.CompareTag("Player")){
-         Attck.HP-=Damege;
-
-      }
-    }
-
-    void start(){
-      Debug.Log(Attck.HP);
-    }
-
 }

@@ -4,18 +4,21 @@ using UnityEngine;
 
 public class BodyJudg : MonoBehaviour
 {
-  public float Damege;
+  public float Damage;
   public BallScript Ball;
         Character BodyCollision;
   void Awake(){
     Ball = GameObject.Find("Ball").GetComponent<BallScript>();
     BodyCollision = GameObject.Find("unitychan").GetComponent<Character>();
-
   }
-  void OnTriggerEnter(Collider Other){
-    if(Ball.gameObject.CompareTag("Ball")){
-      BodyCollision.HP -= Ball.Damege; //Ball.Damege;
-      Debug.Log("Hit");
+
+  void Start(){
+    Debug.Log(BodyCollision.HP+"Unity");// HPは取れてる
+  }
+  void OnTriggerEnter(Collider other){
+    if(other.gameObject.tag=="Ball"){
+      BodyCollision.TakeDamage(BodyCollision.AT); //Ball.Damege;
     }
   }
+
 }
