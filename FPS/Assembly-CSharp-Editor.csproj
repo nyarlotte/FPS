@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{87CE7DE0-644F-B2DF-0751-9633987AA6A5}</ProjectGuid>
+    <ProjectGuid>{3CFCF824-E341-FE1E-8C1F-B6374807FF30}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp-Editor</AssemblyName>
@@ -53,21 +53,46 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Package\UnityChan\Editor\CreateLocatorHere.cs" />
+     <Compile Include="Assets\Toon\Editor\CopyMaterialParameter.cs" />
+     <Compile Include="Assets\Toon\Editor\RemoveUnusedMaterialProperties.cs" />
+     <Compile Include="Assets\Toon\Editor\UTS2GUI.cs" />
+     <Compile Include="Assets\UnityChan.SpringBone\Script\SpringBone\Editor\SpringBone\AutoSpringBoneSetup.cs" />
+     <Compile Include="Assets\UnityChan.SpringBone\Script\SpringBone\Editor\SpringBone\GUI\GUIElements.cs" />
+     <Compile Include="Assets\UnityChan.SpringBone\Script\SpringBone\Editor\SpringBone\GUI\Inspectors\AngleLimitsPropertyInfo.cs" />
+     <Compile Include="Assets\UnityChan.SpringBone\Script\SpringBone\Editor\SpringBone\GUI\Inspectors\InspectorFloatSlider.cs" />
+     <Compile Include="Assets\UnityChan.SpringBone\Script\SpringBone\Editor\SpringBone\GUI\Inspectors\InspectorPropertyInfo.cs" />
+     <Compile Include="Assets\UnityChan.SpringBone\Script\SpringBone\Editor\SpringBone\GUI\Inspectors\SpringBoneInspector.cs" />
+     <Compile Include="Assets\UnityChan.SpringBone\Script\SpringBone\Editor\SpringBone\GUI\Inspectors\SpringBonePivotInspector.cs" />
+     <Compile Include="Assets\UnityChan.SpringBone\Script\SpringBone\Editor\SpringBone\GUI\Inspectors\SpringCapsuleColliderInspector.cs" />
+     <Compile Include="Assets\UnityChan.SpringBone\Script\SpringBone\Editor\SpringBone\GUI\Inspectors\SpringColliderBoneSelector.cs" />
+     <Compile Include="Assets\UnityChan.SpringBone\Script\SpringBone\Editor\SpringBone\GUI\Inspectors\SpringManagerInspector.cs" />
+     <Compile Include="Assets\UnityChan.SpringBone\Script\SpringBone\Editor\SpringBone\GUI\Inspectors\SpringPanelColliderInspector.cs" />
+     <Compile Include="Assets\UnityChan.SpringBone\Script\SpringBone\Editor\SpringBone\GUI\Inspectors\SpringSphereColliderInspector.cs" />
+     <Compile Include="Assets\UnityChan.SpringBone\Script\SpringBone\Editor\SpringBone\GUI\SpringBoneGUIStyles.cs" />
+     <Compile Include="Assets\UnityChan.SpringBone\Script\SpringBone\Editor\SpringBone\GUI\Windows\LoadSpringBoneSetupWindow.cs" />
+     <Compile Include="Assets\UnityChan.SpringBone\Script\SpringBone\Editor\SpringBone\GUI\Windows\MirrorSpringBoneWindow.cs" />
+     <Compile Include="Assets\UnityChan.SpringBone\Script\SpringBone\Editor\SpringBone\GUI\Windows\SaveSpringBoneSetupWindow.cs" />
+     <Compile Include="Assets\UnityChan.SpringBone\Script\SpringBone\Editor\SpringBone\GUI\Windows\SpringBoneSetupErrorWindow.cs" />
+     <Compile Include="Assets\UnityChan.SpringBone\Script\SpringBone\Editor\SpringBone\GUI\Windows\SpringBoneWindow.cs" />
+     <Compile Include="Assets\UnityChan.SpringBone\Script\SpringBone\Editor\SpringBone\SpringBoneEditorActions.cs" />
+     <Compile Include="Assets\UnityChan.SpringBone\Script\SpringBone\Editor\SpringBone\SpringColliderEditorActions.cs" />
+     <Compile Include="Assets\UnityChan.SpringBone\Script\SpringBone\Editor\Utility\Inspector3DRenderer.cs" />
+     <Compile Include="Assets\UnityChan.SpringBone\Script\Utility\Editor\FindGameObjectsWindow.cs" />
+     <Compile Include="Assets\UnityChan.SpringBone\Script\Utility\Editor\SetObjectParentWindow.cs" />
  <Reference Include="Unity.TextMeshPro.Editor">
- <HintPath>D:/Unity/Project/BigMaze/BigMaze/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+ <HintPath>D:/Unity/Project/BigMaze/FPS/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.PackageManagerUI.Editor">
- <HintPath>D:/Unity/Project/BigMaze/BigMaze/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
+ <HintPath>D:/Unity/Project/BigMaze/FPS/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.CollabProxy.Editor">
- <HintPath>D:/Unity/Project/BigMaze/BigMaze/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+ <HintPath>D:/Unity/Project/BigMaze/FPS/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.TextMeshPro">
- <HintPath>D:/Unity/Project/BigMaze/BigMaze/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+ <HintPath>D:/Unity/Project/BigMaze/FPS/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Analytics.DataPrivacy">
- <HintPath>D:/Unity/Project/BigMaze/BigMaze/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
+ <HintPath>D:/Unity/Project/BigMaze/FPS/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.AIModule">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2018.3.5f1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -303,18 +328,6 @@
  <Reference Include="UnityEditor.Graphs">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2018.3.5f1/Editor/Data/Managed/UnityEditor.Graphs.dll</HintPath>
  </Reference>
- <Reference Include="UnityEditor.Android.Extensions">
- <HintPath>C:/Program Files/Unity/Hub/Editor/2018.3.5f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll</HintPath>
- </Reference>
- <Reference Include="UnityEditor.iOS.Extensions">
- <HintPath>C:/Program Files/Unity/Hub/Editor/2018.3.5f1/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.dll</HintPath>
- </Reference>
- <Reference Include="UnityEditor.AppleTV.Extensions">
- <HintPath>C:/Program Files/Unity/Hub/Editor/2018.3.5f1/Editor/Data/PlaybackEngines/AppleTVSupport/UnityEditor.AppleTV.Extensions.dll</HintPath>
- </Reference>
- <Reference Include="UnityEditor.WSA.Extensions">
- <HintPath>C:/Program Files/Unity/Hub/Editor/2018.3.5f1/Editor/Data/PlaybackEngines/MetroSupport/UnityEditor.WSA.Extensions.dll</HintPath>
- </Reference>
  <Reference Include="UnityEditor.WebGL.Extensions">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2018.3.5f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll</HintPath>
  </Reference>
@@ -331,25 +344,19 @@
  <HintPath>C:/Program Files/Unity/Hub/Editor/2018.3.5f1/Editor/Data/PlaybackEngines/Facebook/UnityEditor.Facebook.Extensions.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.Advertisements">
- <HintPath>D:/Unity/Project/BigMaze/BigMaze/Library/PackageCache/com.unity.ads@2.0.8/Editor/UnityEditor.Advertisements.dll</HintPath>
+ <HintPath>D:/Unity/Project/BigMaze/FPS/Library/PackageCache/com.unity.ads@2.0.8/Editor/UnityEditor.Advertisements.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Analytics.Editor">
- <HintPath>D:/Unity/Project/BigMaze/BigMaze/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Editor.dll</HintPath>
+ <HintPath>D:/Unity/Project/BigMaze/FPS/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Analytics.StandardEvents">
- <HintPath>D:/Unity/Project/BigMaze/BigMaze/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.StandardEvents.dll</HintPath>
+ <HintPath>D:/Unity/Project/BigMaze/FPS/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.StandardEvents.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Analytics.Tracker">
- <HintPath>D:/Unity/Project/BigMaze/BigMaze/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Tracker.dll</HintPath>
+ <HintPath>D:/Unity/Project/BigMaze/FPS/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Tracker.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.Purchasing">
- <HintPath>D:/Unity/Project/BigMaze/BigMaze/Library/PackageCache/com.unity.purchasing@2.0.3/Editor/UnityEditor.Purchasing.dll</HintPath>
- </Reference>
- <Reference Include="UnityEditor.iOS.Extensions.Xcode">
- <HintPath>C:/Program Files/Unity/Hub/Editor/2018.3.5f1/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
- </Reference>
- <Reference Include="UnityEditor.iOS.Extensions.Common">
- <HintPath>C:/Program Files/Unity/Hub/Editor/2018.3.5f1/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Common.dll</HintPath>
+ <HintPath>D:/Unity/Project/BigMaze/FPS/Library/PackageCache/com.unity.purchasing@2.0.3/Editor/UnityEditor.Purchasing.dll</HintPath>
  </Reference>
  <Reference Include="mscorlib">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2018.3.5f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/mscorlib.dll</HintPath>
@@ -708,7 +715,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp.csproj">
-      <Project>{31E84161-D26C-8259-A2AC-97DC8F3FE1AE}</Project>      <Name>Assembly-CSharp</Name>    </ProjectReference>
+      <Project>{6CC92EE2-C97E-2137-C111-F092707B90B5}</Project>      <Name>Assembly-CSharp</Name>    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

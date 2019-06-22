@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class BallScript : MonoBehaviour
 {
-    Character Attack;
+/*    Unitychan Attack;
 
     public float Damage;
     public GameObject Ball;
     void Awake(){
-      Attack = GameObject.Find("unitychan").GetComponent<Character>();
-      Damage = Attack.AT;
-    }
+      Attack = GameObject.Find("unitychan").GetComponent<Unitychan>();
+      Damage = Attack.AT; 
+    }*/
 }

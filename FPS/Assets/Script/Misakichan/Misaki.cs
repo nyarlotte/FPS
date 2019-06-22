@@ -2,70 +2,53 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-public class Character: MonoBehaviour
+public class Misaki: MonoBehaviour
 {
-    public  float MaxHP=150;　//maxHP
+    public  float MaxHP=150;
     public  float AT;
-    public  int Speed;
     public  float HP= 100;
-    public  float UnitychanAbility;
-    public  int Shoot;
-    public  int Reload;
-    public  int[] Carry;
+    public  float MisakiAbility;
     public  Text UiHP;
     public  Slider slider;
-                      BodyJudg BodyCollision;
-                      HeadJudg HeadCollision;
-                      BallScript BallDamage;
-    void Awake () {
-      //Status();
-      BodyCollision = GameObject.Find("BodyJudge").GetComponent<BodyJudg>();
-      HeadCollision = GameObject.Find("HeadJudge").GetComponent<HeadJudg>();
-      BallDamage    = GameObject.Find("Ball").GetComponent<BallScript>();
 
-}
+
     //public  int CurrentHP;
     void Start(){
       HP =　MaxHP;
       Status();
     }
+
     public void Status(){//ステータス用関数
-        AT = 45;
-        Speed　=　5;
-        Shoot　=　1000;
-        Reload　=　5;
-        int[] Carry = new int[5];
-        UnitychanAbility = 0.65f;
+        AT = 65;
+        MisakiAbility = 0.65f;
+        //HP自動回復
+        //受けるダメージ1.5倍
     }
 
     public void　TakeDamage(float amount){
-      HP -= amount*UnitychanAbility;
+      HP -= amount/*UnitychanAbility*/;
     }
 
-    public void HPGuI(){
-      //HPをGUIに表示させるため
-      int HPUI =(int)HP  ;
-      slider.maxValue = MaxHP;
-      UiHP.text = "HP"+ HPUI.ToString()  + "/" + MaxHP.ToString();
-      slider.value = HP;
-    }
     void Update(){
-      //毎フレーム変化していくだろうモノをぶち込む
-      TakeDamage(0);
+
       Death();
       HPGuI();
-      Debug.Log("UnityちゃんのHPは"+HP);
     }
 
-
-    public void Death(){//ゲームオーバー用の関数
+    public void Death(){
       if(HP <= 0 ){
         Destroy(gameObject);
-
       }
     }
 
-　
+    public void HPGuI(){
+          //HPをGUIに表示させるため
+    /*      int HPUI =(int)HP  ;
+          slider.maxValue = MaxHP;
+          UiHP.text = "HP"+ HPUI.ToString()  + "/" + MaxHP.ToString();
+          slider.value = HP;
+    */
+    }
 }
 
 //-----HPを回復させるなら--------------------------------
