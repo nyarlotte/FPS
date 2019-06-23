@@ -3403,7 +3403,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1199346476}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.9, z: 0.35}
+  m_LocalPosition: {x: 0, y: 0.9, z: 0.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1702442841}
@@ -5265,16 +5265,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1313238146, guid: c609b79b0b9c58f439f16a3049faee50, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1313238144, guid: c609b79b0b9c58f439f16a3049faee50, type: 3}
       propertyPath: Ball
       value: 
       objectReference: {fileID: 1310257210, guid: 45ffd2aa54a3b6d439f3d253c36be169,
         type: 3}
     - target: {fileID: 1313238144, guid: c609b79b0b9c58f439f16a3049faee50, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1313238146, guid: c609b79b0b9c58f439f16a3049faee50, type: 3}
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}

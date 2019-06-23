@@ -10,13 +10,11 @@ public class Misaki: MonoBehaviour
     public  float Speed;
     [SerializeField]  GameObject  Ball;
     public  float MisakiAbility;
-    public  Text UiHP;
-    public  Slider slider;
+  //  public  Text UiHP;
+  //  public  Slider slider;
     GameObject Shoot;
     GameObject Camera;
 
-
-    public  int CurrentHP;
     void Awake(){
       Shoot = transform.GetChild(6).gameObject;
       //Camera= transform.GetChild(7).gameObject;
@@ -28,8 +26,8 @@ public class Misaki: MonoBehaviour
 
     public void Status(){//ステータス用関数
         AT = 65;
-        Speed = 750;
-        MisakiAbility = 0.65f;
+        Speed = 1000;
+        //MisakiAbility = 0.65f;
         //HP自動回復
         //受けるダメージ1.5倍
     }
@@ -42,6 +40,7 @@ public class Misaki: MonoBehaviour
 
       Death();
       HPGuI();
+      Shooting();
     }
 
     public void Death(){
@@ -52,10 +51,10 @@ public class Misaki: MonoBehaviour
 
     public void HPGuI(){
           //HPをGUIに表示させるため
-          int HPUI =(int)HP  ;
-          slider.maxValue = MaxHP;
-          UiHP.text = "HP"+ HPUI.ToString()  + "/" + MaxHP.ToString();
-          slider.value = HP;
+    //      int HPUI =(int)HP  ;
+    //      slider.maxValue = MaxHP;
+    //      UiHP.text = "HP"+ HPUI.ToString()  + "/" + MaxHP.ToString();
+    //      slider.value = HP;
 
     }
     void Shooting(){
