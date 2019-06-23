@@ -18,7 +18,6 @@ public class ShootBullet : MonoBehaviour{
       var rb = bullets.GetComponent<Rigidbody>();       //cubesのRigidbody取得
       var force = this.gameObject.transform.forward * speed;          //Vector3に速度（speed）代入
       rb.AddForce(force);                             //AddForceで動かす
-
       Destroy(bullets, 5);
     }
   }

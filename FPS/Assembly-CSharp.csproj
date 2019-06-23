@@ -53,20 +53,22 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Script\Character\BallScript.cs" />
-     <Compile Include="Assets\Script\Character\Unitychan.cs" />
-     <Compile Include="Assets\Script\Character\UnitychanBody.cs" />
-     <Compile Include="Assets\Script\Character\UnitychanHead.cs" />
+     <Compile Include="Assets\Script\Character\Misakichan\Misaki.cs" />
+     <Compile Include="Assets\Script\Character\Misakichan\MisakiBody.cs" />
+     <Compile Include="Assets\Script\Character\Misakichan\MisakiHead.cs" />
+     <Compile Include="Assets\Script\Character\Unitychan\Ball.cs" />
+     <Compile Include="Assets\Script\Character\Unitychan\Unitychan.cs" />
+     <Compile Include="Assets\Script\Character\Unitychan\UnitychanBody.cs" />
+     <Compile Include="Assets\Script\Character\Unitychan\UnitychanHead.cs" />
+     <Compile Include="Assets\Script\Character\Yukocchan\Yuko.cs" />
+     <Compile Include="Assets\Script\Character\Yukocchan\YukoBody.cs" />
+     <Compile Include="Assets\Script\Character\Yukocchan\YukoHead.cs" />
+     <Compile Include="Assets\Script\ComScript\BallScript.cs" />
      <Compile Include="Assets\Script\ComScript\FirstPersonController.cs" />
      <Compile Include="Assets\Script\ComScript\ShootBullet.cs" />
-     <Compile Include="Assets\Script\Misakichan\Misaki.cs" />
-     <Compile Include="Assets\Script\Misakichan\MisakiBody.cs" />
-     <Compile Include="Assets\Script\Misakichan\MisakiHead.cs" />
-     <Compile Include="Assets\Script\Unitychan\UnitychanBullet.cs" />
-     <Compile Include="Assets\Script\Unitychan\UnitychanStatus.cs" />
-     <Compile Include="Assets\Script\Yukocchan\Yuko.cs" />
-     <Compile Include="Assets\Script\Yukocchan\YukoBody.cs" />
-     <Compile Include="Assets\Script\Yukocchan\YukoHead.cs" />
+     <Compile Include="Assets\Script\CPU\Misaki\CPMisaki.cs" />
+     <Compile Include="Assets\Script\CPU\Misaki\CPMisakiBody.cs" />
+     <Compile Include="Assets\Script\CPU\Misaki\CPMisakiHead.cs" />
      <Compile Include="Assets\UnityChan.SpringBone\Script\SpringBone\AngleLimits.cs" />
      <Compile Include="Assets\UnityChan.SpringBone\Script\SpringBone\Colliders\Circle3.cs" />
      <Compile Include="Assets\UnityChan.SpringBone\Script\SpringBone\Colliders\SpringCapsuleCollider.cs" />
