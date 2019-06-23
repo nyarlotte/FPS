@@ -19,7 +19,7 @@ public class Misaki: MonoBehaviour
     public  int CurrentHP;
     void Awake(){
       Shoot = transform.GetChild(6).gameObject;
-      Camera= transform.GetChild(7).gameObject;
+      //Camera= transform.GetChild(7).gameObject;
     }
     void Start(){
       HP =　MaxHP;
@@ -62,7 +62,7 @@ public class Misaki: MonoBehaviour
     if(Input.GetMouseButtonDown(0)){
         var Balls = Instantiate(Ball, Shoot.transform.position, Quaternion.identity) as GameObject;
         var rb = Balls.GetComponent<Rigidbody>();       //cubesのRigidbody取得
-        var force = Camera.transform.forward*Speed;          //Vector3に速度（speed）代入
+        var force = Shoot.transform.forward*Speed;          //Vector3に速度（speed）代入
         rb.AddForce(force);                             //AddForceで動かす
         Destroy(Balls, 5);
       }
