@@ -53,6 +53,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scene\School.cs" />
      <Compile Include="Assets\Script\Character\Misakichan\Misaki.cs" />
      <Compile Include="Assets\Script\Character\Misakichan\MisakiBody.cs" />
      <Compile Include="Assets\Script\Character\Misakichan\MisakiHead.cs" />
@@ -69,7 +70,9 @@
      <Compile Include="Assets\Script\CPU\Misaki\CPMisaki.cs" />
      <Compile Include="Assets\Script\CPU\Misaki\CPMisakiBody.cs" />
      <Compile Include="Assets\Script\CPU\Misaki\CPMisakiHead.cs" />
+     <Compile Include="Assets\Script\SchoolPawn.cs" />
      <Compile Include="Assets\Script\Select\ChangeScene.cs" />
+     <Compile Include="Assets\Script\Select\SelectMisaki.cs" />
      <Compile Include="Assets\Script\Select\SelectUnitychan.cs" />
      <Compile Include="Assets\UnityChan.SpringBone\Script\SpringBone\AngleLimits.cs" />
      <Compile Include="Assets\UnityChan.SpringBone\Script\SpringBone\Colliders\Circle3.cs" />
