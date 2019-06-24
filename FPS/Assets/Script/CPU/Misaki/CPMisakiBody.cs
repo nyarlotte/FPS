@@ -7,12 +7,12 @@ public class CPMisakiBody : MonoBehaviour
     GameObject CPMisaki;
     CPMisaki Script;
     Unitychan    Unitychan;
-    Yuko　　　　　Yuko;
-  void Awake(){
+    //Yuko　　　　　Yuko;
+  void Start(){
     CPMisaki = transform.root.gameObject ;
     Script = CPMisaki.GetComponent<CPMisaki>();
     Unitychan = GameObject.Find("unitychan").GetComponent<Unitychan>();
-    Yuko = GameObject.Find("Yuko").GetComponent<Yuko>();
+    //Yuko = GameObject.Find("Yuko").GetComponent<Yuko>();
   }
 
   void OnTriggerEnter(Collider other){
@@ -21,7 +21,7 @@ public class CPMisakiBody : MonoBehaviour
     }else if(other.gameObject.tag=="UnitychanBall"){
       Script.TakeDamage(Unitychan.AT);
     }else if(other.gameObject.tag=="YukoBall"){
-      Script.TakeDamage(Yuko.AT);
+    //  Script.TakeDamage(Yuko.AT);
     }
   }
 }

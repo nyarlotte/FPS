@@ -15,12 +15,12 @@ public class Unitychan: MonoBehaviour
     public  Slider slider;
             GameObject Shoot;
             GameObject Camera;
-            CPMisaki MisakiScript;
+
 
     void Awake(){
       Shoot = transform.GetChild(6).gameObject;
       Camera= transform.GetChild(10).gameObject;
-      MisakiScript = GameObject.Find("CPMisaki").GetComponent<CPMisaki>();
+
     }
     void Start(){
       HP =　MaxHP;
@@ -41,7 +41,6 @@ public class Unitychan: MonoBehaviour
       Death();
       HPGuI();
       Shooting();
-      Count();
     }
     void Dead(){
       SceneManager.LoadScene("GameOver");
@@ -69,11 +68,7 @@ public class Unitychan: MonoBehaviour
         Destroy(Balls, 5);
       }
     }
-    void Count(){
-        if(MisakiScript.HP <= 0){
-          SceneManager.LoadScene("Clear");
-        }
-    }
+
 
 }
 

@@ -6,24 +6,22 @@ public class UnitychanHead : MonoBehaviour
 {
         GameObject Unitychan;
         Unitychan Script;
-        Misaki    MisakiAT;
-        Yuko　　　　　YukoAT;
+        CPMisaki    Misaki;
+        //Yuko　　　　　Yuko;
   void Awake(){
-
-
     Unitychan = transform.root.gameObject ;
     Script = Unitychan.GetComponent<Unitychan>();
-    MisakiAT = GameObject.Find("CPMisaki").GetComponent<Misaki>();
-    YukoAT = GameObject.Find("Yuko").GetComponent<Yuko>();
+    Misaki = GameObject.Find("CPMisaki").GetComponent<CPMisaki>();
+    //Yuko = GameObject.Find("Yuko").GetComponent<Yuko>();
   }
 
   void OnTriggerEnter(Collider other){
     if(other.gameObject.tag=="UnitychanBall"){
       Script.TakeDamage(Script.AT*1.5f);
     }else if(other.gameObject.tag=="MisakiBall"){
-      Script.TakeDamage(MisakiAT.AT*1.5f);
+      Script.TakeDamage(Misaki.AT*1.5f);
     }else if(other.gameObject.tag=="YukoBall"){
-      Script.TakeDamage(MisakiAT.AT*1.5f);
+      //Script.TakeDamage(Misaki.AT*1.5f);
     }
   }
 
