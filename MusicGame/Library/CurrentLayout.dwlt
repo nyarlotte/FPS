@@ -467,7 +467,7 @@ MonoBehaviour:
       speed: 2
       m_Value: 0
   m_Rotation:
-    m_Target: {x: 0.27565613, y: 0.016721746, z: -0.00479761, w: 0.96109885}
+    m_Target: {x: 0.27565616, y: 0.016721748, z: -0.0047976105, w: 0.9610989}
     speed: 2
     m_Value: {x: 0.27565616, y: 0.016721748, z: -0.0047976105, w: 0.9610989}
   m_Size:
@@ -603,9 +603,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 862a0000
-      m_LastClickedID: 10886
-      m_ExpandedIDs: b0fbffffc62a0000
+      m_SelectedIDs: 
+      m_LastClickedID: 0
+      m_ExpandedIDs: cefaffffb0fbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -667,19 +667,19 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Script/Select
+    - Assets/Scene
   m_ViewMode: 1
   m_StartGridSize: 96
   m_LastFolders:
-  - Assets/Script/Select
+  - Assets/Scene
   m_LastFoldersGridSize: 96
   m_LastProjectPath: D:\Unity\Project\BigMaze\MusicGame
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 42280000
-    m_LastClickedID: 10306
+    m_SelectedIDs: 4c280000
+    m_LastClickedID: 10316
     m_ExpandedIDs: 000000000428000096280000dc2800006e2b0000702b0000722b0000742b0000762b0000782b00007a2b000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -735,7 +735,7 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 0
+    m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c6230000a44500003c2d0000542d0000682d0000e8280000a62f00006e0b00003c2b0000d228000000000000722a000064980000
     m_RenameOverlay:
       m_UserAcceptedRename: 0

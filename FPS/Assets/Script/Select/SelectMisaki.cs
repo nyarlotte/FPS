@@ -18,7 +18,7 @@ public void SelectCharacter(){
 
   public void MoveScene (){
     PlayerPrefs.SetInt("Character",1);
-
+    
     SceneManager.LoadScene("School");
 
   }

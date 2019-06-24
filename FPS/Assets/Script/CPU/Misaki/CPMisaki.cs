@@ -31,13 +31,12 @@ public class CPMisaki : MonoBehaviour
     GameObject Camera;
     void Awake()
     {
-      PlayerPos = GameObject.FindGameObjectWithTag("Player").transform;
       CPUNav = GetComponent<NavMeshAgent>();
       CPMisakiPos =  GetComponent<Transform>();
       Shoot = transform.GetChild(6).gameObject;
     }
     void Start(){
-
+      PlayerPos = GameObject.FindGameObjectWithTag("Player").transform;
       HP =　MaxHP;
       Status();
       InvokeRepeating("CPUMove",0,5);
@@ -86,7 +85,7 @@ public class CPMisaki : MonoBehaviour
 
     void AtTime(){
       Timer += Time.deltaTime;
-      if(Timer >= 0.5f){
+      if(Timer >= 1.5f){
         Shooting();
         Timer = 0.0f;
 

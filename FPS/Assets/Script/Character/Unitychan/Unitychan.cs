@@ -2,23 +2,25 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 public class Unitychan: MonoBehaviour
 {
     public  float MaxHP=150;　//maxHP
     public  float AT;
     public  float Speed;
-    public  float HP= 100;
+    public   float HP= 100;
     public  float UnitychanAbility;
     [SerializeField]  GameObject  Ball;
     public  Text UiHP;
     public  Slider slider;
             GameObject Shoot;
             GameObject Camera;
+            CPMisaki MisakiScript;
 
     void Awake(){
-
       Shoot = transform.GetChild(6).gameObject;
       Camera= transform.GetChild(10).gameObject;
+      MisakiScript = GameObject.Find("CPMisaki").GetComponent<CPMisaki>();
     }
     void Start(){
       HP =　MaxHP;
@@ -39,14 +41,18 @@ public class Unitychan: MonoBehaviour
       Death();
       HPGuI();
       Shooting();
+      Count();
+    }
+    void Dead(){
+      SceneManager.LoadScene("GameOver");
     }
 
     public void Death(){
       if(HP <= 0 ){
-        Destroy(gameObject);
+          gameObject.SetActive(false);
+          Invoke("Dead",2);
       }
     }
-
     public void HPGuI(){
           //HPをGUIに表示させるため
           int HPUI =(int)HP  ;
@@ -63,6 +69,12 @@ public class Unitychan: MonoBehaviour
         Destroy(Balls, 5);
       }
     }
+    void Count(){
+        if(MisakiScript.HP <= 0){
+          SceneManager.LoadScene("Clear");
+        }
+    }
+
 }
 
 //-----HPを回復させるなら--------------------------------
