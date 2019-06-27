@@ -1,25 +1,28 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 
 public class SelectUnitychan : MonoBehaviour
 {
   public GameObject Select;
-    public bool   Unitychan = false;
+  public GameObject panel;
+  public GameObject UnitychanText;
+          Text textttt;
+  public bool   Unitychan = false;
+
+public void Start (){
+  textttt =UnitychanText.GetComponent<Text>();
+}
+
 public void SelectCharacter(){
-
   Select.SetActive(true);
-  Unitychan = true;
+  panel.SetActive(true);
+  textttt.text = "unitychan-dayo";
   Debug.Log(Unitychan);
-  MoveScene();
-}
-
-public void MoveScene (){
   PlayerPrefs.SetInt("Character",0);
-
-  SceneManager.LoadScene("School");
-
 }
+
+
 }
