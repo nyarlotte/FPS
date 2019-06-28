@@ -4723,11 +4723,10 @@ GameObject:
   - component: {fileID: 1837681379}
   - component: {fileID: 1837681372}
   - component: {fileID: 1837681374}
-  - component: {fileID: 1837681373}
   - component: {fileID: 1837681382}
   m_Layer: 0
   m_Name: Kohaku
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4994,18 +4993,6 @@ CapsuleCollider:
   m_Height: 1
   m_Direction: 1
   m_Center: {x: 0, y: 0.5, z: 0}
---- !u!114 &1837681373
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1837681371}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2219e5d67e954504c88866e4e3eebf22, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1837681382
 MonoBehaviour:
   m_ObjectHideFlags: 0
