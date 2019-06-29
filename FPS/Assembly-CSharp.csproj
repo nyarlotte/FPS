@@ -53,7 +53,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Script\Database\CharacterStatus.cs" />
+     <Compile Include="Assets\Script\Other\CPMisaki.cs" />
      <Compile Include="Assets\Script\Other\PlayerController.cs" />
+     <Compile Include="Assets\Script\Other\Status.cs" />
      <Compile Include="Assets\Script\Scene\School.cs" />
      <Compile Include="Assets\Script\Select\SelectMisaki.cs" />
      <Compile Include="Assets\Script\Select\SelectUnitychan.cs" />
