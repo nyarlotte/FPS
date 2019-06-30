@@ -4724,6 +4724,7 @@ GameObject:
   - component: {fileID: 1837681372}
   - component: {fileID: 1837681374}
   - component: {fileID: 1837681382}
+  - component: {fileID: 326218306}
   m_Layer: 0
   m_Name: Kohaku
   m_TagString: Player
@@ -5007,6 +5008,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Speed: 5
   MouseSpeed: 10
+--- !u!114 &326218306
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1837681371}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52d53b07139e6194381e3e9d506690eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Unitychan: {fileID: 11400000, guid: 7f81294a06a8a404aa46d57aa8b50c90, type: 2}
+  HP: 0
 --- !u!1 &1839482869
 GameObject:
   m_ObjectHideFlags: 0

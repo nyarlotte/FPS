@@ -4,17 +4,22 @@ using UnityEngine;
 
 public class Status : MonoBehaviour
 {
-   public float HP = 100;
-   public float AT = 45;
-    // Start is called before the first frame update
-    void Start()
-    {
+  public CharacterStatus Unitychan;
+  [SerializeField]
+  public  float HP ;
+  [SerializeField]
+    float AT;
+  [SerializeField]
+    string Name;
 
+    void Awake()
+    {
+      HP = Unitychan.maxHp;
+      AT = Unitychan.atk;
+      Name =Unitychan.characterName;
+      Debug.Log(HP);
+      Debug.Log(AT);
+      Debug.Log(Name);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
 }

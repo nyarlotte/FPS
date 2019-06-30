@@ -21,7 +21,7 @@ public class CPMisaki : MonoBehaviour
     public bool Search = false;
 
     public　float　Timer;
-    [SerializeField]  GameObject  Ball;
+    [SerializeField] GameObject Ball  = default;
     Transform    CPMisakiPos;
     Transform    PlayerPos;
     Transform    CPUPos;

@@ -2,17 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CharacterStatus : MonoBehaviour
-{
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+[CreateAssetMenu(menuName = "MyScriptable/Create CharacterStatus")]
+public class CharacterStatus : ScriptableObject {
+	public string characterName;
+	public int maxHp;
+	public int atk;
+	public int def;
+	public int exp;
+	public int gold;
 }
