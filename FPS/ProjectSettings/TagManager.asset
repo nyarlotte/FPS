@@ -4,10 +4,8 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Ball
-  - UnitychanBall
-  - MisakiBall
   - Fields
+  - Enemy
   layers:
   - Default
   - TransparentFX
