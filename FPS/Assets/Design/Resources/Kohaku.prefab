@@ -5020,8 +5020,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52d53b07139e6194381e3e9d506690eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Unitychan: {fileID: 11400000, guid: 7f81294a06a8a404aa46d57aa8b50c90, type: 2}
+  Unitychan: {fileID: 11400000, guid: ee19e3037802d1d48a62b8080b932649, type: 2}
   HP: 0
+  AT: 0
+  Name: 
+  Speed: 0
 --- !u!1 &1839482869
 GameObject:
   m_ObjectHideFlags: 0

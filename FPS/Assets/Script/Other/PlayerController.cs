@@ -4,19 +4,26 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField] float Speed = 5;          //移動スピード変更用変数
+    [SerializeField] float Speed;         //移動スピード変更用変数
     [SerializeField] float MouseSpeed = 10;    // マウススピード変更用変数
     //[SerializeField] GameObject FPCamera;
     //[SerializeField] GameObject TPCamera;
 
     private Transform PlayerTrans;             //PlayerとCameraのTransform参照
+    private Status Status;
     //private Animator Anim;                     //Animatorコンポーネントへの参照
 
     private void Awake()
     {
-        PlayerTrans = GetComponent<Transform>(); ;
+        PlayerTrans = GetComponent<Transform>();
+        Status = GetComponent<Status>();
+        //Speed = Status.Speed;　Awakeだと読み込むのが少し遅かったので
 
         //Anim = GetComponent<Animator>();
+    }
+    private void Start()
+    {
+      Speed = Status.Speed;
     }
 
     private void Update()

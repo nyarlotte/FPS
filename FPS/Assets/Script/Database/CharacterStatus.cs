@@ -6,9 +6,7 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "MyScriptable/Create CharacterStatus")]
 public class CharacterStatus : ScriptableObject {
 	public string characterName;
-	public int maxHp;
-	public int atk;
-	public int def;
-	public int exp;
-	public int gold;
+	public float maxHp;
+	public float atk;
+	public float speed;
 }

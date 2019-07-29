@@ -27,6 +27,8 @@ public class CPMisaki : MonoBehaviour
     Transform    CPUPos;
     NavMeshAgent CPUNav;
 
+    Status Status;
+
     GameObject Shoot;
     GameObject Camera;
     void Awake()
@@ -34,15 +36,18 @@ public class CPMisaki : MonoBehaviour
       CPUNav = GetComponent<NavMeshAgent>();
       CPMisakiPos =  GetComponent<Transform>();
       Shoot = transform.GetChild(4).gameObject;
+      Status = GetComponent<Status>();
     }
     void Start(){
       PlayerPos = GameObject.FindGameObjectWithTag("Player").transform;
-      HP =　MaxHP;
-      Status();
+
+      CPStatus();
       InvokeRepeating("CPUMove",0,5);
     }
-    public void Status(){//ステータス用関数
-        AT = 65;
+    public void CPStatus(){//ステータス用関数
+        HP =　Status.HP;
+        AT = Status.AT;
+        Speed = Status.Speed;
         Speed = 1000;
         MisakiAbility = 0.65f;
         //HP自動回復

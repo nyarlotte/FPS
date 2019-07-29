@@ -8,18 +8,22 @@ public class Status : MonoBehaviour
   [SerializeField]
   public  float HP ;
   [SerializeField]
-    float AT;
+  public  float AT;
   [SerializeField]
-    string Name;
+  public  string Name;
+  [SerializeField]
+  public float Speed;
 
-    void Awake()
+  void Awake()
     {
       HP = Unitychan.maxHp;
       AT = Unitychan.atk;
       Name =Unitychan.characterName;
+      Speed = Unitychan.speed;
       Debug.Log(HP);
       Debug.Log(AT);
       Debug.Log(Name);
+      Debug.Log(Speed);
     }
 
 }
