@@ -20,7 +20,7 @@ public class ShootingBullets : MonoBehaviour{
     void Shooting(){
         if (Input.GetMouseButtonDown(0)){                        //もしマウス左クリックをしたら。。。
             GameObject bullets = Instantiate(_Bullet, shootingObjTrans.position, Quaternion.identity) as GameObject;    //BulletオブジェクトをShootingObjectの位置からBulletsとして生成
-            bullets.transform.parent = this.transform;          //Playerの子オブジェクトにする
+            //bullets.transform.parent = this.transform;          //Playerの子オブジェクトにする
             bullets.name = "Player's Bullet";
             Rigidbody rb = bullets.GetComponent<Rigidbody>();   //BulletsのRigidBodyを取得し、前方向に力を加える
             Vector3 force = shootingObjTrans.forward * _Speed;

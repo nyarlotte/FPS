@@ -55,11 +55,13 @@
   <ItemGroup>
      <Compile Include="Assets\Script\Database\CharacterStatus.cs" />
      <Compile Include="Assets\Script\Other\Bullet.cs" />
-     <Compile Include="Assets\Script\Other\CPMisaki.cs" />
+     <Compile Include="Assets\Script\Other\CPU.cs" />
      <Compile Include="Assets\Script\Other\PlayerController.cs" />
      <Compile Include="Assets\Script\Other\ShootingBullets.cs" />
      <Compile Include="Assets\Script\Other\Status.cs" />
-     <Compile Include="Assets\Script\Scene\School.cs" />
+     <Compile Include="Assets\Script\Result\Result.cs" />
+     <Compile Include="Assets\Script\Result\ResultImage.cs" />
+     <Compile Include="Assets\Script\Scene\GameManager.cs" />
      <Compile Include="Assets\Script\Select\SelectMisaki.cs" />
      <Compile Include="Assets\Script\Select\SelectUnitychan.cs" />
      <Compile Include="Assets\Script\Select\StartGame.cs" />
