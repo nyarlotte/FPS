@@ -9,290 +9,221 @@ using Random = UnityEngine.Random;
 
 public class BattleManegment : MonoBehaviour {
 
-    public enum Phase
-    {
-        Select,
-        Battle,
-        Result
-    }
-
     //GameObject
-    public Phase phase;
-    public GameObject Enemy;
-    public List<GameObject> character = new List<GameObject>();
-    public GameObject Player;
-    public GameObject Current;
-    public GameObject Wait;
-    public GameObject BattleMenu;
+    GameObject _Enemy;
+    List<GameObject> _Character = new List<GameObject>();
+    GameObject _Player;
+    GameObject _Current;
+    GameObject _Wait;
+    [SerializeField] GameObject _BattleMenu, _EscapeButton, _BattleButton;
+
     //Script
+    [SerializeField] BattleMessage _BattleText;
 
     //UI
     public Slider EnemyHP;
     public Slider PlayerHP;
     public Text PlayerHP_text;
     public Text EnemyHP_text;
-    //数値
-    public int[] Speed;
+
     //bool
-    public bool Same = false;
-    public bool isFadeIn = false;
-    public bool isFadeOut = false;  
-    public GameObject FadePanel;
-    Image Fade;
+    [SerializeField] bool _Same = false;
+    bool _IsFadeIn = false;
+    bool _IsFadeOut = false;
 
-    float fadeSpeed = 0.02f;        //透明度が変わるスピードを管理
-    float red, green, blue, alfa;   //パネルの色、不透明度を管理
+    [SerializeField] Image _Fade;
+    float _FadeSpeed = 0.02f;        //透明度が変わるスピードを管理
+    float _Red, _Green, _Blue, _Alfa;   //パネルの色、不透明度を管理
+    int _Escape;
 
+    private void Awake() { 
+        _Enemy =(GameObject) Resources.Load("Slime");
+        _Player = GameObject.FindGameObjectWithTag("Player");
+        Instantiate(_Enemy, new Vector3(2, 0, 2), Quaternion.identity);
+        _Character.Add(_Player);
+        _Character.Add(_Enemy);
 
-    private void Awake()
-    { 
-    
-        Enemy =(GameObject)Resources.Load("Slime");
-        Player = GameObject.FindGameObjectWithTag("Player");
+        _Enemy.GetComponent<Status>().Awake();
 
-        Instantiate(Enemy);
-
-        character.Add(Player);
-        character.Add(Enemy);
-        
-        Enemy.GetComponent<Status>().Awake();
-
-        Fade = FadePanel.GetComponent<Image>();
-        red = Fade.color.r;
-        green = Fade.color.g;
-        blue = Fade.color.b;
-        alfa = Fade.color.a;
-
+        _Red = _Fade.color.r;
+        _Green = _Fade.color.g;
+        _Blue = _Fade.color.b;
+        _Alfa = _Fade.color.a;
     }
 
-    void Start ()
-    {
-        Debug.Log(Enemy.GetComponent<Status>().HP);
-        Debug.Log(Enemy.GetComponent<Status>().DF);
-        Debug.Log(Enemy.GetComponent<Status>().EXP);
-        
-        character[0].transform.position = new Vector3(0, 0, 0);
+    void Start () {
+        Debug.Log(_Enemy.GetComponent<Status>().HP);
+        Debug.Log(_Enemy.GetComponent<Status>().DF);
+        Debug.Log(_Enemy.GetComponent<Status>().EXP);
+        _Character[0].transform.position = new Vector3(0, 0, 0);
 
-        if (character[0].GetComponent<Status>().SP > character[1].GetComponent<Status>().SP)
-        {
-            Current = character[0];
-            Wait = character[1];
-        }else if(character[0].GetComponent<Status>().SP < character[1].GetComponent<Status>().SP)
-        {
-            Current = character[1];
-            Wait = character[0];
-        }else if (character[0].GetComponent<Status>().SP == character[1].GetComponent<Status>().SP)
-        {
-            Same = true;
-            SameSpeed();
+        if (_Character[0].GetComponent<Status>().SP > _Character[1].GetComponent<Status>().SP) {
+            _Current = _Character[0];
+            _Wait = _Character[1];
+        } else if(_Character[0].GetComponent<Status>().SP < _Character[1].GetComponent<Status>().SP) {
+            _Current = _Character[1];
+            _Wait = _Character[0];
+        } else {
+            _Same = true;
+            Set();
         }
+        _BattleMenu.SetActive(false);
+        EnemyHP.GetComponent<Slider>().maxValue = _Enemy.GetComponent<Status>().MaxHP; 
+        PlayerHP.GetComponent<Slider>().maxValue = _Player.GetComponent<Status>().MaxHP;
 
-        BattleMenu.SetActive(false);
-
-        EnemyHP.GetComponent<Slider>().maxValue = Enemy.GetComponent<Status>().MaxHP; 
-        PlayerHP.GetComponent<Slider>().maxValue = Player.GetComponent<Status>().MaxHP;
         Slider();
-        phase = Phase.Select;
-        isFadeIn = true;
+        _IsFadeIn = true;
     }
 
+    void Update () {                   //Updateの中身が長くなるようならメソッドで分けてもよし
 
-
-    void Update () {
-        switch (phase)
-        {
-            case Phase.Select:
-                Menu(0);
-                break;
-            case Phase.Battle:
-                Battle(0);
-                break;
-            case Phase.Result:
-                break;
+        if (_Current.tag == "Enemy") {
+            Battle(1);
         }
 
         Slider();
 
-        if (isFadeIn == true)
-        {
-            FadeIn();
+        if (_IsFadeIn == true) {         //シーン移動した際にフェードイン
+            _Alfa -= _FadeSpeed;          //a)不透明度を徐々に下げる
+            _Fade.color = new Color(_Red, _Green, _Blue, _Alfa); //b)変更した不透明度パネルに反映する
+
+            if (_Alfa <= 0) {            //c)完全に透明になったら処理を抜ける
+                _IsFadeIn = false;
+                _Fade.enabled = false;   //d)パネルの表示をオフにする
+            }
         }
 
-        if (isFadeOut == true)
-        {
-            FadeOut();
-        }
+        if (_IsFadeOut == true) {        //バトル終了時フェードアウト
+            _Fade.enabled = true;
+            _Alfa += _FadeSpeed;
+            _Fade.color = new Color(_Red, _Green, _Blue, _Alfa);
 
-    }
-
-    void FadeIn()// シーン移動した際にフェードイン
-    {
-        alfa -= fadeSpeed;                //a)不透明度を徐々に下げる
-        SetAlpha();                      //b)変更した不透明度パネルに反映する
-        if (alfa <= 0)
-        {                    //c)完全に透明になったら処理を抜ける
-            isFadeIn = false;
-            Fade.enabled = false;    //d)パネルの表示をオフにする
+            if (_Alfa >= 1) {
+                _IsFadeOut = false;
+                BackScene();
+            }
         }
     }
 
-    void FadeOut()　//バトル終了時フェードアウト
-    {
-        Fade.enabled = true;
-        alfa += fadeSpeed;
-        SetAlpha();
-        if (alfa >= 1)
-        {
-            isFadeOut = false;
-            BackScene();
-        }
-
+    void Slider() {
+        EnemyHP.GetComponent<Slider>().value = _Enemy.GetComponent<Status>().HP;
+        PlayerHP.GetComponent<Slider>().value = _Player.GetComponent<Status>().HP;
+        PlayerHP_text.text = _Player.GetComponent<Status>().Name+"Lv"+ _Player.GetComponent<Status>().Lv+"HP" + _Player.GetComponent<Status>().HP+"/" + _Player.GetComponent<Status>().MaxHP; 
+        EnemyHP_text.text  = _Enemy.GetComponent<Status>().Name + "Lv" + _Enemy.GetComponent<Status>().Lv + "HP" + _Enemy.GetComponent<Status>().HP + "/" + _Enemy.GetComponent<Status>().MaxHP;
     }
 
+    public void Menu(int i) {
 
+        switch (i) {
 
-    void Slider()
-    {
-        EnemyHP.GetComponent<Slider>().value = Enemy.GetComponent<Status>().HP;
-        PlayerHP.GetComponent<Slider>().value = Player.GetComponent<Status>().HP;
-
-
-        PlayerHP_text.text = Player.GetComponent<Status>().Name+"Lv"+ Player.GetComponent<Status>().Lv+"HP" + Player.GetComponent<Status>().HP+"/" + Player.GetComponent<Status>().MaxHP; 
-        EnemyHP_text.text  = Enemy.GetComponent<Status>().Name + "Lv" + Enemy.GetComponent<Status>().Lv + "HP" + Enemy.GetComponent<Status>().HP + "/" + Enemy.GetComponent<Status>().MaxHP;
-    }
-
-
-    public void Menu(int i)
-    {
-        switch (i)
-        {
             case 1:
-                BattleMenu.SetActive(true);
+                _BattleMenu.SetActive(true);
                 Set();
-                Battle(0);
                 break;
+
             case 2:
                 Escape();
                 break;
         }
-        
     }
 
-    void Set()
-    {
-        if (Same == true)
-        {
-            SameSpeed();
+    void Set() {
+
+        if (_Same == true) {
+            _Character = _Character.OrderBy(a => Guid.NewGuid()).ToList();
+            _Current = _Character[0];
+            _Wait = _Character[1];
         }
     }
 
-    public void Battle(int i)
-    {
-        switch (i)
-        {
-            case 1:
-                int Damage = Current.GetComponent<Status>().AT - Wait.GetComponent<Status>().DF;
+    public void Battle(int i) {
 
-                if(Damage == 0)
-                {
+        switch (i) {
+
+            case 1:
+                _BattleMenu.SetActive(false);
+                _BattleButton.SetActive(false);
+                _EscapeButton.SetActive(false);
+                int Damage = _Current.GetComponent<Status>().AT - _Wait.GetComponent<Status>().DF;
+
+                if(Damage <= 0) {
                     Damage = 1;
                 }
 
-                Wait.GetComponent<Status>().HP -= Damage;
-                Debug.Log(Wait.GetComponent<Status>().Name+ "に"+ Damage + "のダメージ");
+                _Wait.GetComponent<Status>().HP -= Damage;
+                _BattleText.SetMessage(_Wait.GetComponent<Status>().Name + "に" + Damage + "のダメージ");
+                Debug.Log(_Wait.GetComponent<Status>().Name+ "に"+ Damage + "のダメージ");
                 
-                if(Wait.GetComponent<Status>().HP <= 0)
-                {
+                if (_Wait.GetComponent<Status>().HP <= 0) {
                     Result();
                 }
+
                 Change();
+                _BattleButton.SetActive(true);
+                _EscapeButton.SetActive(true);
                 break;
 
-            case 2:
-
+            case 2:             //Item
                 break;
 
             case 3:
-                GameObject End = Current;
-                Current = Wait;
-                Wait = End;
-                Battle(0);
+                GameObject End = _Current;
+                _Current = _Wait;
+                _Wait = End;
                 break;
         }
     }
 
-    int turn;
-
-    void Change()
-    { 
-        GameObject End = Current;
-            Current = Wait;
-            Wait = End;
-            Battle(0);
-        turn ++;
-
-        if(turn == character.Count)
-        {
-            phase = Phase.Select;
-            BattleMenu.SetActive(false);
-            turn = 0;
-        }
+    void Change()　{
+        GameObject end = _Current;
+        _Current = _Wait;
+        _Wait = end;
     }
 
-    void Result()
-    {
-        Debug.Log(Wait.GetComponent<Status>().Name + "を倒した");
-        if(Wait.tag == "Player")
-        {
+    void Result() {
+        _BattleText.SetMessage(_Wait.GetComponent<Status>().Name + "を倒した");
+        Debug.Log(_Wait.GetComponent<Status>().Name + "を倒した");
+
+        if (_Wait.tag == "Player") {
             Debug.Log("GameOver");
+            _BattleText.SetMessage("Game Over");
             // SceneManager.LoadScene("GameOver");
-
-        }
-        else if (Wait.tag == "Enemy")
-        {
-
-            Player.GetComponent<Status>().GET = Player.GetComponent<Status>().GET + Enemy.GetComponent<Status>().EXP;
-            Player.GetComponent<Status>().TOTAL_EXP += Enemy.GetComponent<Status>().EXP;
-            Player.GetComponent<Status>().LevelUP -= Enemy.GetComponent<Status>().EXP;
+        }　else {
+            _Player.GetComponent<Status>().GET = _Player.GetComponent<Status>().GET + _Enemy.GetComponent<Status>().EXP;
+            _Player.GetComponent<Status>().TOTAL_EXP += _Enemy.GetComponent<Status>().EXP;
+            _Player.GetComponent<Status>().LevelUP -= _Enemy.GetComponent<Status>().EXP;
             int random = Random.Range(0, 255);
             
-            if (random >= 200)
-            {
-                Debug.Log(Wait.GetComponent<Status>().bag[0]._name + "をGetした");
-                Player.GetComponent<Status>().bag.Add(Enemy.GetComponent<Status>().bag[0]);
+            if (random >= 200) {
+                _BattleText.SetMessage(_Wait.GetComponent<Status>().bag[0]._name + "をGetした");
+                Debug.Log(_Wait.GetComponent<Status>().bag[0]._name + "をGetした");
+                _Player.GetComponent<Status>().bag.Add(_Enemy.GetComponent<Status>().bag[0]);
             }
-
-            Player.GetComponent<Status>().MONEY += Enemy.GetComponent<Status>().MONEY;
-            Player.GetComponent<Status>().Levelup();
-            isFadeOut = true;
-
+            _Player.GetComponent<Status>().MONEY += _Enemy.GetComponent<Status>().MONEY;
+            _Player.GetComponent<Status>().Levelup();
+            _IsFadeOut = true;
         }
-        
     }
 
-    int escape;
-    void Escape()
-    {
+    void Escape() {
         int random = Random.Range(0, 10);
 
-        if(random > 7)
-        {
-            isFadeOut = true;
-        }
-        else if(escape ==2)
-        {
-            isFadeOut = true;
-        }
-        else
-        {
+        if(random > 7) {
+            _IsFadeOut = true;
+        } else if(_Escape == 2) {
+            _IsFadeOut = true;
+        } else {
             Battle(3);
-            escape++;
+            _Escape++;
         }
     }
 
-    void SameSpeed()
-    {
-        character = character.OrderBy(a => Guid.NewGuid()).ToList();
+    void BackScene() {//シーンの移動および元の位置に戻る
+        _Player.transform.position = _Player.GetComponent<Status>().save;
+        SceneManager.LoadScene("GameScene");
+    }
+}
+()).ToList();
         Current = character[0];
            Wait = character[1];
     }
