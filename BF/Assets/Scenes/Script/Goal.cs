@@ -11,7 +11,7 @@ public class Goal : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
-            Debug.Log("触れた心は輝いた");
+
             FadeManager.Instance.LoadScene("1", 2.0f);
             GameManegement.Event(2);
             GameManegement._event = true;

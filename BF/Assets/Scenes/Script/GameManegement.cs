@@ -40,7 +40,6 @@ public class GameManegement : MonoBehaviour {
     private void Awake()
     {
         Fade = FadePanel.GetComponent<Image>();
-        
         red = Fade.color.r;
         green = Fade.color.g;
         blue = Fade.color.b;
@@ -53,6 +52,7 @@ public class GameManegement : MonoBehaviour {
 
         panel.SetActive(false);
         turn = Turn.Run;
+
         for (int i = 0; i < MenuButton.Count; i++)
         {
             MenuButton[i].SetActive(false);
@@ -83,11 +83,10 @@ public class GameManegement : MonoBehaviour {
                 break;
         }
 
-        Menu(0);
+        Menu();
 
         if(_event == true)
         {
-            
             time += Time.deltaTime;
             if(time >= 2)
             {
@@ -99,22 +98,16 @@ public class GameManegement : MonoBehaviour {
         {
             alfa += fadeSpeed;
             character.GetComponent<Move>().CharacterMove = false;
+
             SetAlpha();
             if (alfa >= 1)
             {
                 isFadeOut = false;
-               
                 SceneManager.LoadScene("BattleScene");
-
                 isFadeIn = true;
-
             }
-           
         }
-        
     }
-    
-
 
     void Encount()
     {
@@ -122,7 +115,7 @@ public class GameManegement : MonoBehaviour {
 
         if (Input.GetKey("w") | Input.GetKey("s") | Input.GetKey("a") | Input.GetKey("d"))
         {
-             random = Random.Range(0, 100);
+           //  random = Random.Range(0, 100);
         }
 
         if (random > 97)
@@ -148,7 +141,7 @@ public class GameManegement : MonoBehaviour {
 
 
     bool MenuCheck= false;
-    public void Menu(int Button) //メニューの画面を開く
+    public void Menu(int Button=0) //メニューの画面を開く
     {
         if (isBattle == false) {
             if (MenuCheck == false)//最初に押されたとき
@@ -188,26 +181,6 @@ public class GameManegement : MonoBehaviour {
                 break;
         }
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     void Back()
     {
@@ -306,7 +279,6 @@ public class GameManegement : MonoBehaviour {
     {
         ClickCount += 1;
     }
-
 
 }
 

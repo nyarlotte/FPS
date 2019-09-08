@@ -2805,6 +2805,7 @@ MonoBehaviour:
   _event: 0
   isFadeOut: 0
   isFadeIn: 0
+  isBattle: 0
   position_save: {x: 0, y: 0, z: 0}
 --- !u!4 &1656082375
 Transform:

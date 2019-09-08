@@ -15,6 +15,7 @@ public class BattleManegment : MonoBehaviour {
         Battle,
         Result
     }
+
     //GameObject
     public Phase phase;
     public GameObject Enemy;
@@ -46,9 +47,11 @@ public class BattleManegment : MonoBehaviour {
     private void Awake()
     { 
     
-        Enemy =(GameObject) Resources.Load("Slime");
+        Enemy =(GameObject)Resources.Load("Slime");
         Player = GameObject.FindGameObjectWithTag("Player");
+
         Instantiate(Enemy);
+
         character.Add(Player);
         character.Add(Enemy);
         
@@ -69,6 +72,7 @@ public class BattleManegment : MonoBehaviour {
         Debug.Log(Enemy.GetComponent<Status>().EXP);
         
         character[0].transform.position = new Vector3(0, 0, 0);
+
         if (character[0].GetComponent<Status>().SP > character[1].GetComponent<Status>().SP)
         {
             Current = character[0];
@@ -181,20 +185,21 @@ public class BattleManegment : MonoBehaviour {
             SameSpeed();
         }
     }
+
     public void Battle(int i)
     {
         switch (i)
         {
             case 1:
-                int Damege = Current.GetComponent<Status>().AT - Wait.GetComponent<Status>().DF;
+                int Damage = Current.GetComponent<Status>().AT - Wait.GetComponent<Status>().DF;
 
-                if(Damege == 0)
+                if(Damage == 0)
                 {
-                    Damege = 1;
+                    Damage = 1;
                 }
 
-                Wait.GetComponent<Status>().HP -= Damege;
-                Debug.Log(Wait.GetComponent<Status>().Name+ "に"+ Damege + "のダメージ");
+                Wait.GetComponent<Status>().HP -= Damage;
+                Debug.Log(Wait.GetComponent<Status>().Name+ "に"+ Damage + "のダメージ");
                 
                 if(Wait.GetComponent<Status>().HP <= 0)
                 {
@@ -202,9 +207,11 @@ public class BattleManegment : MonoBehaviour {
                 }
                 Change();
                 break;
+
             case 2:
 
                 break;
+
             case 3:
                 GameObject End = Current;
                 Current = Wait;
@@ -215,6 +222,7 @@ public class BattleManegment : MonoBehaviour {
     }
 
     int turn;
+
     void Change()
     { 
         GameObject End = Current;
@@ -257,7 +265,7 @@ public class BattleManegment : MonoBehaviour {
             Player.GetComponent<Status>().MONEY += Enemy.GetComponent<Status>().MONEY;
             Player.GetComponent<Status>().Levelup();
             isFadeOut = true;
-            Destroy(Enemy);
+
         }
         
     }
