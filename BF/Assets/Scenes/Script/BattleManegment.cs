@@ -36,8 +36,8 @@ public class BattleManegment : MonoBehaviour {
     float _Red, _Green, _Blue, _Alfa;   //パネルの色、不透明度を管理
     int _Escape;
 
-    private void Awake() { 
-        _Enemy =(GameObject) Resources.Load("Slime");
+    private void Awake() {
+        _Enemy = (GameObject)Resources.Load("Slime");
         _Player = GameObject.FindGameObjectWithTag("Player");
         Instantiate(_Enemy, new Vector3(2, 0, 2), Quaternion.identity);
         _Character.Add(_Player);
@@ -51,16 +51,14 @@ public class BattleManegment : MonoBehaviour {
         _Alfa = _Fade.color.a;
     }
 
-    void Start () {
-        Debug.Log(_Enemy.GetComponent<Status>().HP);
-        Debug.Log(_Enemy.GetComponent<Status>().DF);
-        Debug.Log(_Enemy.GetComponent<Status>().EXP);
+    void Start() {
+
         _Character[0].transform.position = new Vector3(0, 0, 0);
 
         if (_Character[0].GetComponent<Status>().SP > _Character[1].GetComponent<Status>().SP) {
             _Current = _Character[0];
             _Wait = _Character[1];
-        } else if(_Character[0].GetComponent<Status>().SP < _Character[1].GetComponent<Status>().SP) {
+        } else if (_Character[0].GetComponent<Status>().SP < _Character[1].GetComponent<Status>().SP) {
             _Current = _Character[1];
             _Wait = _Character[0];
         } else {
@@ -68,14 +66,14 @@ public class BattleManegment : MonoBehaviour {
             Set();
         }
         _BattleMenu.SetActive(false);
-        EnemyHP.GetComponent<Slider>().maxValue = _Enemy.GetComponent<Status>().MaxHP; 
+        EnemyHP.GetComponent<Slider>().maxValue = _Enemy.GetComponent<Status>().MaxHP;
         PlayerHP.GetComponent<Slider>().maxValue = _Player.GetComponent<Status>().MaxHP;
 
         Slider();
         _IsFadeIn = true;
     }
 
-    void Update () {                   //Updateの中身が長くなるようならメソッドで分けてもよし
+    void Update() {                   //Updateの中身が長くなるようならメソッドで分けてもよし
 
         if (_Current.tag == "Enemy") {
             Battle(1);
@@ -108,8 +106,8 @@ public class BattleManegment : MonoBehaviour {
     void Slider() {
         EnemyHP.GetComponent<Slider>().value = _Enemy.GetComponent<Status>().HP;
         PlayerHP.GetComponent<Slider>().value = _Player.GetComponent<Status>().HP;
-        PlayerHP_text.text = _Player.GetComponent<Status>().Name+"Lv"+ _Player.GetComponent<Status>().Lv+"HP" + _Player.GetComponent<Status>().HP+"/" + _Player.GetComponent<Status>().MaxHP; 
-        EnemyHP_text.text  = _Enemy.GetComponent<Status>().Name + "Lv" + _Enemy.GetComponent<Status>().Lv + "HP" + _Enemy.GetComponent<Status>().HP + "/" + _Enemy.GetComponent<Status>().MaxHP;
+        PlayerHP_text.text = _Player.GetComponent<Status>().Name + "Lv" + _Player.GetComponent<Status>().Lv + "HP" + _Player.GetComponent<Status>().HP + "/" + _Player.GetComponent<Status>().MaxHP;
+        EnemyHP_text.text = _Enemy.GetComponent<Status>().Name + "Lv" + _Enemy.GetComponent<Status>().Lv + "HP" + _Enemy.GetComponent<Status>().HP + "/" + _Enemy.GetComponent<Status>().MaxHP;
     }
 
     public void Menu(int i) {
@@ -146,14 +144,14 @@ public class BattleManegment : MonoBehaviour {
                 _EscapeButton.SetActive(false);
                 int Damage = _Current.GetComponent<Status>().AT - _Wait.GetComponent<Status>().DF;
 
-                if(Damage <= 0) {
+                if (Damage <= 0) {
                     Damage = 1;
                 }
 
                 _Wait.GetComponent<Status>().HP -= Damage;
                 _BattleText.SetMessage(_Wait.GetComponent<Status>().Name + "に" + Damage + "のダメージ");
-                Debug.Log(_Wait.GetComponent<Status>().Name+ "に"+ Damage + "のダメージ");
-                
+                Debug.Log(_Wait.GetComponent<Status>().Name + "に" + Damage + "のダメージ");
+
                 if (_Wait.GetComponent<Status>().HP <= 0) {
                     Result();
                 }
@@ -174,7 +172,7 @@ public class BattleManegment : MonoBehaviour {
         }
     }
 
-    void Change()　{
+    void Change() {
         GameObject end = _Current;
         _Current = _Wait;
         _Wait = end;
@@ -188,12 +186,12 @@ public class BattleManegment : MonoBehaviour {
             Debug.Log("GameOver");
             _BattleText.SetMessage("Game Over");
             // SceneManager.LoadScene("GameOver");
-        }　else {
+        } else {
             _Player.GetComponent<Status>().GET = _Player.GetComponent<Status>().GET + _Enemy.GetComponent<Status>().EXP;
             _Player.GetComponent<Status>().TOTAL_EXP += _Enemy.GetComponent<Status>().EXP;
             _Player.GetComponent<Status>().LevelUP -= _Enemy.GetComponent<Status>().EXP;
             int random = Random.Range(0, 255);
-            
+
             if (random >= 200) {
                 _BattleText.SetMessage(_Wait.GetComponent<Status>().bag[0]._name + "をGetした");
                 Debug.Log(_Wait.GetComponent<Status>().bag[0]._name + "をGetした");
@@ -208,9 +206,9 @@ public class BattleManegment : MonoBehaviour {
     void Escape() {
         int random = Random.Range(0, 10);
 
-        if(random > 7) {
+        if (random > 7) {
             _IsFadeOut = true;
-        } else if(_Escape == 2) {
+        } else if (_Escape == 2) {
             _IsFadeOut = true;
         } else {
             Battle(3);
@@ -218,25 +216,17 @@ public class BattleManegment : MonoBehaviour {
         }
     }
 
+
     void BackScene() {//シーンの移動および元の位置に戻る
         _Player.transform.position = _Player.GetComponent<Status>().save;
         SceneManager.LoadScene("GameScene");
     }
+
 }
-()).ToList();
-        Current = character[0];
-           Wait = character[1];
-    }
+
+    
 
 
-    void SetAlpha()
-    {
-        Fade.color = new Color(red, green, blue, alfa);
-    }
 
-    void BackScene()//シーンの移動および元の位置に戻る
-    {
-        Player.transform.position = Player.GetComponent<Status>().save;
-        SceneManager.LoadScene("GameScene");
-    }
-}
+
+

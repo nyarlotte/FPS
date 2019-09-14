@@ -525,6 +525,7 @@ GameObject:
   m_Component:
   - component: {fileID: 321476461}
   - component: {fileID: 321476462}
+  - component: {fileID: 321476463}
   m_Layer: 0
   m_Name: BattleManegment
   m_TagString: Untagged
@@ -558,22 +559,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ea154c835c95b343b2c54278ce83ab3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  phase: 0
-  Enemy: {fileID: 1576912825406392, guid: 828177146f8dcc546ab570158c78b8f5, type: 3}
-  character: []
-  Player: {fileID: 0}
-  Current: {fileID: 0}
-  Wait: {fileID: 0}
-  BattleMenu: {fileID: 1108571165}
+  _BattleMenu: {fileID: 1108571165}
+  _EscapeButton: {fileID: 2089223428}
+  _BattleButton: {fileID: 1317265694}
+  _BattleText: {fileID: 321476463}
   EnemyHP: {fileID: 2079388493}
   PlayerHP: {fileID: 1374434528}
   PlayerHP_text: {fileID: 636007273}
   EnemyHP_text: {fileID: 1765683583}
-  Speed: 
-  Same: 0
-  isFadeIn: 0
-  isFadeOut: 0
-  FadePanel: {fileID: 284634012}
+  _Same: 0
+  _Fade: {fileID: 284634014}
+--- !u!114 &321476463
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 321476460}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6eeeb107433591943a17b0cf8c42bbbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _MessageText: {fileID: 42459583}
 --- !u!1 &415861276
 GameObject:
   m_ObjectHideFlags: 0
@@ -2557,7 +2565,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4743080465545146, guid: a83b699e1453a3a4092ae4a2dd97e7f7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -15
       objectReference: {fileID: 0}
     - target: {fileID: 4743080465545146, guid: a83b699e1453a3a4092ae4a2dd97e7f7, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2565,7 +2573,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4743080465545146, guid: a83b699e1453a3a4092ae4a2dd97e7f7, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 31
       objectReference: {fileID: 0}
     - target: {fileID: 4743080465545146, guid: a83b699e1453a3a4092ae4a2dd97e7f7, type: 3}
       propertyPath: m_LocalRotation.x
